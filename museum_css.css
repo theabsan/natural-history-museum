@@ -1,0 +1,352 @@
+/* Custom CSS for Natural History Museum Website */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #2c5530;
+    --secondary-color: #8b4513;
+    --accent-color: #d4a574;
+    --dark-color: #1a1a1a;
+    --light-bg: #f8f9fa;
+    --warning-color: #ffc107;
+}
+
+/* Global styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* Custom Bootstrap theme colors */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1e3a22;
+    border-color: #1e3a22;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Navigation styles */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar.navbar-scrolled {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+}
+
+.navbar-brand img {
+    transition: height 0.3s ease;
+}
+
+.navbar.navbar-scrolled .navbar-brand img {
+    height: 35px !important;
+}
+
+/* Hero section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c5530 0%, #1e3a22 100%);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background-size: cover, cover, 200px 200px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-cta .btn {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-cta .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.history-after-dark {
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    border: none;
+    border-radius: 15px;
+    color: #1a1a1a !important;
+    max-width: 500px;
+}
+
+.history-after-dark .alert-heading {
+    color: #1a1a1a !important;
+}
+
+/* Special hours styling */
+.special-hours {
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem !important;
+}
+
+/* Card animations and styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Collection cards */
+.collection-card {
+    overflow: hidden;
+}
+
+.collection-card img {
+    transition: transform 0.3s ease;
+    height: 250px;
+    object-fit: cover;
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Exhibit cards */
+.exhibit-featured {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.exhibit-featured .card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Program cards */
+.program-card {
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.program-card:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.program-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(44, 85, 48, 0.1);
+}
+
+/* Section spacing and backgrounds */
+section {
+    scroll-margin-top: 80px;
+}
+
+.bg-light {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+/* Contact form styling */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 85, 48, 0.25);
+}
+
+/* Map placeholder */
+.map-placeholder {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border: 2px dashed #adb5bd;
+}
+
+/* Membership cards */
+#membership .card {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+#membership .card:hover {
+    transform: scale(1.05);
+}
+
+.price {
+    color: var(--primary-color);
+}
+
+/* Footer styling */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+}
+
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--warning-color) !important;
+}
+
+.special-hours-footer .badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+        text-align: center;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cta .btn {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    
+    .card-img-top {
+        height: 200px !important;
+    }
+    
+    .program-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .program-icon i {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-brand span {
+        font-size: 1rem;
+    }
+    
+    .history-after-dark {
+        margin: 1rem 0;
+    }
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for better accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    #contact,
+    footer {
+        display: none !important;
+    }
+    
+    .hero-section {
+        background: white !important;
+        color: black !important;
+        min-height: auto !important;
+        padding: 2rem 0;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
