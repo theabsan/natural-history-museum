@@ -1,5 +1,5 @@
 # natural-history-museum
-Image References - Harvard Style
+Image References 
 Website Image Sources
 1. Dinosaur Fossils (Paleontology Hall)
 Hand, J. (no date) Natural History Museum, London: Everything You Need To Know. Time Out. Available at: https://www.timeout.com/london/museums/natural-history-museum (Accessed: 5 July 2025).
@@ -23,5 +23,4 @@ Bootstrap Team (2023) Bootstrap Icons v1.10.0. [Icon Library]. Available at: htt
 Unsplash Images
 Note: Additional images sourced from Unsplash.com under Creative Commons licensing for placeholder content.
 
-References Format Note
-All references follow Harvard referencing style as commonly used in UK academic institutions. Where specific author names were not available, "No author" has been used as per Harvard conventions. Access dates reflect the date of website compilation (5 July 2025).
+
