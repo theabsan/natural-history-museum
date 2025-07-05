@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural History Museum - Wireframe & Priority Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #333;
+        }
+        .priority-legend {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .priority-legend h2 {
+            margin: 0 0 10px 0;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .section {
+            border: 2px solid #666;
+            margin: 10px;
+            padding: 15px;
+            position: relative;
+        }
+        .section-label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .priority-1 { background: #ff4444; }
+        .priority-2 { background: #ff8c00; }
+        .priority-3 { background: #ffd700; }
+        .priority-4 { background: #90ee90; }
+        .priority-5 { background: #87ceeb; }
+        
+        /* Wireframe Elements */
+        .nav-bar {
+            background: #e0e0e0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border: 1px solid #999;
+        }
+        .logo-box {
+            width: 200px;
+            height: 40px;
+            background: #ccc;
+            border: 1px solid #999;
+        }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-item {
+            width: 80px;
+            height: 30px;
+            background: #ddd;
+            border: 1px solid #999;
+        }
+        .hero-section {
+            height: 400px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 2px solid #999;
+        }
+        .hero-content {
+            text-align: center;
+            width: 60%;
+        }
+        .hero-title {
+            height: 60px;
+            background: #ddd;
+            margin-bottom: 20px;
+            border: 1px solid #999;
+        }
+        .hero-text {
+            height: 40px;
+            background: #eee;
+            margin-bottom: 20px;
+            border: 1px solid #999;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .cta-button {
+            width: 150px;
+            height: 40px;
+            background: #ccc;
+            border: 1px solid #999;
+        }
+        .alert-box {
+            width: 400px;
+            height: 80px;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card-wireframe {
+            height: 200px;
+            background: #f8f8f8;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .card-image {
+            height: 100px;
+            background: #ddd;
+            margin-bottom: 10px;
+            border: 1px solid #999;
+        }
+        .card-title {
+            height: 20px;
+            background: #eee;
+            margin-bottom: 10px;
+            border: 1px solid #999;
+        }
+        .card-text {
+            height: 40px;
+            background: #f5f5f5;
+            border: 1px solid #999;
+        }
+        .hours-section {
+            background: #e8f4fd;
+            padding: 20px;
+            border: 2px solid #007bff;
+        }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .hours-table {
+            background: white;
+            height: 200px;
+            border: 1px solid #999;
+            padding: 10px;
+        }
+        .special-card {
+            background: #fff3cd;
+            height: 150px;
+            border: 2px solid #ffc107;
+            padding: 10px;
+        }
+        .form-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .form-wireframe {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-field {
+            height: 40px;
+            background: white;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+        }
+        .form-textarea {
+            height: 80px;
+            background: white;
+            margin-bottom: 15px;
+            border: 1px solid #999;
+        }
+        .submit-button {
+            height: 50px;
+            background: #007bff;
+            color: white;
+            border: 1px solid #0056b3;
+            width: 100%;
+        }
+        .footer-section {
+            background: #333;
+            color: white;
+            padding: 20px;
+            height: 150px;
+        }
+        .mobile-note {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            margin: 10px;
+            font-size: 12px;
+        }
+        .priority-note {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 11px;
+            color: #666;
+            background: white;
+            padding: 2px 5px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="priority-legend">
+        <h2>Priority Guide & Content Hierarchy</h2>
+        <div class="legend-item">
+            <span class="legend-color priority-1"></span>
+            <span>Priority 1: Critical (Conversion & Navigation)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color priority-2"></span>
+            <span>Priority 2: High (Key Features & USP)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color priority-3"></span>
+            <span>Priority 3: Medium (Supporting Content)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color priority-4"></span>
+            <span>Priority 4: Low (Additional Info)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color priority-5"></span>
+            <span>Priority 5: Supplementary (Footer Content)</span>
+        </div>
+    </div>
+
+    <div class="wireframe-container">
+        <!-- Navigation - Priority 1 -->
+        <div class="section priority-1">
+            <div class="section-label">NAVIGATION - Priority 1</div>
+            <div class="priority-note">Mobile: Hamburger menu</div>
+            <div class="nav-bar">
+                <div class="logo-box">LOGO + Museum Name</div>
+                <div class="nav-items">
+                    <div class="nav-item">Collection</div>
+                    <div class="nav-item">Exhibits</div>
+                    <div class="nav-item">Programs</div>
+                    <div class="nav-item">Tours</div>
+                    <div class="nav-item">Visit</div>
+                    <div class="nav-item" style="background: #007bff; color: white;">Member CTA</div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Logo, Hamburger menu, Membership CTA visible
+            </div>
+        </div>
+
+        <!-- Hero Section - Priority 1 -->
+        <div class="section priority-1">
+            <div class="section-label">HERO SECTION - Priority 1</div>
+            <div class="priority-note">Above fold - Critical first impression</div>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-title">MAIN HEADLINE - "Discover Wonders"</div>
+                    <div class="hero-text">Supporting text - Educational mission</div>
+                    <div class="cta-buttons">
+                        <div class="cta-button" style="background: #007bff; color: white;">Explore Exhibits</div>
+                        <div class="cta-button" style="background: transparent; border: 2px solid white;">Become Member</div>
+                    </div>
+                    <div class="alert-box">
+                        <strong>HISTORY AFTER DARK</strong><br>
+                        Thursday late opening banner
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Headline, single CTA, History After Dark banner
+            </div>
+        </div>
+
+        <!-- Opening Hours - Priority 2 -->
+        <div class="section priority-2">
+            <div class="section-label">OPENING HOURS - Priority 2</div>
+            <div class="priority-note">High priority - Practical info users need first</div>
+            <div class="hours-section">
+                <div class="hours-grid">
+                    <div class="hours-table">
+                        <strong>OPENING HOURS TABLE</strong><br>
+                        Monday-Wednesday: 9-5<br>
+                        <span style="background: #ffc107; padding: 2px;">Thursday: 9-11PM</span><br>
+                        Friday-Saturday: 9-6<br>
+                        Sunday: 11-5
+                    </div>
+                    <div class="special-card">
+                        <strong>HISTORY AFTER DARK</strong><br>
+                        Special Thursday programs<br>
+                        Extended hours highlight
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Hours table stacked, Thursday emphasis maintained
+            </div>
+        </div>
+
+        <!-- Permanent Collection - Priority 3 -->
+        <div class="section priority-3">
+            <div class="section-label">PERMANENT COLLECTION - Priority 3</div>
+            <div class="priority-note">Core content - What museum offers</div>
+            <div class="content-grid">
+                <div class="card-wireframe">
+                    <div class="card-image">Dinosaur Image</div>
+                    <div class="card-title">Paleontology Hall</div>
+                    <div class="card-text">Description text</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Mineral Image</div>
+                    <div class="card-title">Geology & Minerals</div>
+                    <div class="card-text">Description text</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Wildlife Image</div>
+                    <div class="card-title">Wildlife & Biodiversity</div>
+                    <div class="card-text">Description text</div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Single column, image-first layout
+            </div>
+        </div>
+
+        <!-- Current Exhibits - Priority 2 -->
+        <div class="section priority-2">
+            <div class="section-label">CURRENT EXHIBITS - Priority 2</div>
+            <div class="priority-note">Time-sensitive content - Drives visits</div>
+            <div class="content-grid">
+                <div class="card-wireframe" style="grid-column: span 2; height: 250px; background: #fff3cd; border: 2px solid #ffc107;">
+                    <div class="card-image" style="height: 150px;">FEATURED: Climate Change Exhibit</div>
+                    <div class="card-title">Featured Exhibition</div>
+                    <div class="card-text">Prominent display with expiry date</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Ancient Civilizations</div>
+                    <div class="card-title">Secondary Exhibit</div>
+                    <div class="card-text">Supporting content</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Ocean Depths</div>
+                    <div class="card-title">Permanent Display</div>
+                    <div class="card-text">Ongoing exhibition</div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Featured exhibit full-width, others stacked
+            </div>
+        </div>
+
+        <!-- Kids Programs - Priority 2 -->
+        <div class="section priority-2">
+            <div class="section-label">SUMMER PROGRAMS - Priority 2</div>
+            <div class="priority-note">High value - Family audience & revenue</div>
+            <div class="content-grid">
+                <div class="card-wireframe">
+                    <div class="card-image">Young Scientists Icon</div>
+                    <div class="card-title">Ages 6-10 Program</div>
+                    <div class="card-text">Schedule & description</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Fossil Hunters Icon</div>
+                    <div class="card-title">Ages 8-12 Program</div>
+                    <div class="card-text">Schedule & description</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-image">Photography Icon</div>
+                    <div class="card-title">Ages 10-16 Program</div>
+                    <div class="card-text">Schedule & description</div>
+                </div>
+                <div class="card-wireframe" style="background: #fff3cd; border: 2px solid #ffc107;">
+                    <div class="card-image">After Dark Icon</div>
+                    <div class="card-title">After Dark Adventures</div>
+                    <div class="card-text">Thursday evening special</div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> 2x2 grid, After Dark program emphasized
+            </div>
+        </div>
+
+        <!-- Tours & Talks - Priority 3 -->
+        <div class="section priority-3">
+            <div class="section-label">TOURS & TALKS - Priority 3</div>
+            <div class="priority-note">Revenue generating - Secondary conversion</div>
+            <div class="content-grid">
+                <div class="card-wireframe">
+                    <div class="card-title">Guided Tours</div>
+                    <div class="card-text">Daily schedule<br>Free with admission<br>60 minutes</div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-title">Expert Lectures</div>
+                    <div class="card-text">Monthly events<br>£15/£10 members<br>Evening slot</div>
+                </div>
+                <div class="card-wireframe" style="background: #fff3cd; border: 2px solid #ffc107;">
+                    <div class="card-title">After Dark Tours</div>
+                    <div class="card-text">Thursday specials<br>£25/£20 members<br>Behind scenes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visit Information - Priority 3 -->
+        <div class="section priority-3">
+            <div class="section-label">HOW TO FIND US - Priority 3</div>
+            <div class="priority-note">Practical information - Pre-visit planning</div>
+            <div class="content-grid">
+                <div class="card-wireframe">
+                    <div class="card-title">Address & Contact</div>
+                    <div class="card-text">
+                        Full address<br>
+                        Phone & email<br>
+                        University campus location
+                    </div>
+                </div>
+                <div class="card-wireframe">
+                    <div class="card-title">Getting Here</div>
+                    <div class="card-text">
+                        Public transport<br>
+                        Parking info<br>
+                        Cycling options
+                    </div>
+                </div>
+            </div>
+            <div class="card-wireframe" style="height: 150px; margin: 20px;">
+                <div class="card-title">Interactive Map Placeholder</div>
+                <div class="card-text">Map integration for directions</div>
+            </div>
+        </div>
+
+        <!-- Membership - Priority 1 -->
+        <div class="section priority-1">
+            <div class="section-label">MEMBERSHIP - Priority 1</div>
+            <div class="priority-note">Primary conversion goal - Revenue critical</div>
+            <div class="content-grid">
+                <div class="card-wireframe">
+                    <div class="card-title">Individual - £45</div>
+                    <div class="card-text">
+                        Basic benefits<br>
+                        Entry level option<br>
+                        Clear value prop
+                    </div>
+                </div>
+                <div class="card-wireframe" style="background: #fff3cd; border: 2px solid #ffc107;">
+                    <div class="card-title">Family - £95 ⭐</div>
+                    <div class="card-text">
+                        MOST POPULAR<br>
+                        Family benefits<br>
+                        Best value highlight
+                    </div>
+                </div>
+                <div class="card-wireframe" style="background: #333; color: white;">
+                    <div class="card-title" style="background: #555;">Patron - £200</div>
+                    <div class="card-text" style="background: #444;">
+                        Premium tier<br>
+                        Exclusive benefits<br>
+                        VIP treatment
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Family plan featured first, clear pricing visibility
+            </div>
+        </div>
+
+        <!-- Contact Form - Priority 1 -->
+        <div class="section priority-1">
+            <div class="section-label">CONTACT FORM - Priority 1</div>
+            <div class="priority-note">Conversion point - Lead generation</div>
+            <div class="form-section">
+                <div class="form-wireframe">
+                    <div class="form-field">First Name *</div>
+                    <div class="form-field">Last Name *</div>
+                    <div class="form-field">Email *</div>
+                    <div class="form-field">Phone</div>
+                    <div class="form-field">Inquiry Type * (Dropdown)</div>
+                    <div class="form-textarea">Message *</div>
+                    <div class="form-field" style="height: 20px;">Newsletter checkbox</div>
+                    <div class="submit-button">SEND MESSAGE</div>
+                </div>
+            </div>
+            <div class="mobile-note">
+                <strong>Mobile Priority:</strong> Single column, large touch targets, minimal required fields
+            </div>
+        </div>
+
+        <!-- Footer - Priority 5 -->
+        <div class="section priority-5">
+            <div class="section-label">FOOTER - Priority 5</div>
+            <div class="priority-note">Supplementary info - SEO & legal</div>
+            <div class="footer-section">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; color: white;">
+                    <div>
+                        <strong>Museum Info</strong><br>
+                        Logo + mission<br>
+                        Social links
+                    </div>
+                    <div>
+                        <strong>Quick Links</strong><br>
+                        Navigation menu<br>
+                        Site map
+                    </div>
+                    <div>
+                        <strong>Hours Summary</strong><br>
+                        Condensed schedule<br>
+                        Thursday highlight
+                    </div>
+                    <div>
+                        <strong>Contact</strong><br>
+                        Address<br>
+                        Phone & email
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #e9ecef; padding: 20px; margin-top: 20px; border: 1px solid #ccc;">
+        <h3>Mobile-First Considerations</h3>
+        <ul>
+            <li><strong>Above the fold:</strong> Logo, hamburger menu, headline, single CTA, Thursday banner</li>
+            <li><strong>Navigation:</strong> Collapsible menu with membership CTA always visible</li>
+            <li><strong>Content hierarchy:</strong> Hours → Collection → Exhibits → Programs → Membership</li>
+            <li><strong>Touch targets:</strong> Minimum 44px for all interactive elements</li>
+            <li><strong>Form optimization:</strong> Minimal required fields, large input areas</li>
+            <li><strong>Performance:</strong> Image optimization, lazy loading for below-fold content</li>
+        </ul>
+        
+        <h3>Key UX Decisions</h3>
+        <ul>
+            <li><strong>Thursday emphasis:</strong> "History After Dark" appears in 4 strategic locations</li>
+            <li><strong>Membership focus:</strong> Multiple conversion points throughout user journey</li>
+            <li><strong>Practical information priority:</strong> Hours and location emphasized for decision-making</li>
+            <li><strong>Family-friendly design:</strong> Kids programs prominently featured</li>
+            <li><strong>Educational authority:</strong> Expert content and academic affiliation highlighted</li>
+        </ul>
+    </div>
+</body>
+</html>
